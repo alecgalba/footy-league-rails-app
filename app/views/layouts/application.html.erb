@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FootyLeagueApp</title>
+    <title>NYC Footy League</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,8 @@
 
   <body>
     <%= link_to("Sign Out", destroy_user_session_path, :method => "delete") %>
+        <%= link_to 'Team Index', teams_path %>
+        <%= link_to 'League Index', leagues_path %>
     <%= yield %>
   </body>
 </html>

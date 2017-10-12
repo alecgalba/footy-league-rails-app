@@ -16,7 +16,8 @@
 </p>
 
 <p>
-  In Leagues: <% @team.leagues.map(&:name).join(',') %>
+  <strong>In League(s):</strong>
+  <% @team.leagues.map(&:name).join(',') %>
 </p>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
