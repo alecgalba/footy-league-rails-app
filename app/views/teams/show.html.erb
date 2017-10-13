@@ -17,7 +17,11 @@
 
 <p>
   <strong>In League(s):</strong>
-  <% @team.leagues.map(&:name).join(',') %>
+  <ul>
+    <% @team.leagues.each do |league| %>
+      <li><%= league.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
