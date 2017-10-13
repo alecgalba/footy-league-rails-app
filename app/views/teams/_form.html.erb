@@ -26,6 +26,16 @@
     <%= form.text_field :colors, id: :team_colors %>
   </div>
 
+  <div class="field">
+  <%= form.label "League(s)" %><br />
+  <%= form.collection_check_boxes :league_ids, League.all, :id, :name do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+</div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
