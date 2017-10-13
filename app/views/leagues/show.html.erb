@@ -12,7 +12,11 @@
 
 <p>
   <strong>Team(s):</strong>
-  <% @league.teams.map(&:name).join(',') %>
+  <ul>
+    <% @league.teams.each do |team| %>
+      <li><%= team.name %></li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_league_path(@league) %> |
