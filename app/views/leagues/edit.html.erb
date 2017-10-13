@@ -1,12 +1,12 @@
 <h1>Editing League</h1>
 
 <%= render 'form', league: @league %>
-<% for team in Team.all %>
+<!-- <% for team in Team.all %>
 <div>
   <%= check_box_tag "league[team_ids][]", team.id, @league.teams.include?(team) %>
   <%= team.name %>
 </div>
-<% end %>
+<% end %> -->
 
 <%= link_to 'Show', @league %> |
 <%= link_to 'Back', leagues_path %>
