@@ -2,7 +2,7 @@
 
 Specs:
 - [x] Using Ruby on Rails for the project
-  #Started up the app using 'rails new' command
+  ###Started up the app using 'rails new' command
 - [X] Include at least one has_many relationship (x has_many y e.g. User has_many Recipes)
   #A User has many Teams
 - [X] Include at least one belongs_to relationship (x belongs_to y e.g. Post belongs_to User)
