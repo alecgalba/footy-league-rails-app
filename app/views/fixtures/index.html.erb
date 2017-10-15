@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fixtures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fixtures.each do |fixture| %>
+      <tr>
+        <td><%= fixture.team_1 %></td>
+        <td><%= fixture.team_2 %></td>
+        <td><%= fixture.date.strftime("%m/%d/%Y") %></td>
+        <td><%= fixture.time.strftime("%l:%M %p") %></td>
+        <td><%= link_to 'Show', fixture %></td>
+        <td><%= link_to 'Edit', edit_fixture_path(fixture) %></td>
+        <td><%= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fixture', new_fixture_path %>
