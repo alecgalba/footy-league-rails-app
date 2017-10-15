@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :team_1 %>
-    <%= form.text_field :team_1, id: :fixture_team_1 %>
+    <%= form.label :team_1, "Home Team" %>
+    <%= form.collection_select :team_1, Team.all, :name, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :team_2 %>
-    <%= form.text_field :team_2, id: :fixture_team_2 %>
+    <%= form.label :team_2, "Away Team" %>
+    <%= form.collection_select :team_2, Team.all, :name, :name %>
   </div>
 
   <div class="field">
@@ -32,13 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.label "League(s)" %><br />
-    <%= form.collection_check_boxes :league_ids, League.all, :id, :name do |b| %>
-      <div class="collection-check-box">
-        <%= b.check_box %>
-        <%= b.label %>
-      </div>
-    <% end %>
+    <%= form.label :league_id, "League" %>
+    <%= form.collection_select :league_ids, League.all, :name, :name %>
   </div>
 
   <div class="actions">
