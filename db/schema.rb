@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015161317) do
+ActiveRecord::Schema.define(version: 20171015171914) do
+
+  create_table "fixtures", force: :cascade do |t|
+    t.string "team_1"
+    t.string "team_2"
+    t.date "date"
+    t.time "time"
+    t.integer "team_id"
+    t.integer "league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_fixtures_on_league_id"
+    t.index ["team_id"], name: "index_fixtures_on_team_id"
+  end
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
