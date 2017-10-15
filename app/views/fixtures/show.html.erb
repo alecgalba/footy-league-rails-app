@@ -1,4 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Selected Fixture</h1>
+
+<p>
+  <strong>Home Team:</strong>
+  <%= @fixture.team_1 %>
+</p>
+
+<p>
+  <strong>Away Team:</strong>
+  <%= @fixture.team_2 %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fixture.date.strftime("%m/%d/%Y") %>
+</p>
+
+<p>
+  <strong>Kick Off Time:</strong>
+  <%= @fixture.time.strftime("%l:%M %p") %>
+</p>
+
 <%= link_to 'Edit', edit_fixture_path(@fixture) %> |
 <%= link_to 'Back To Fixture Index', fixtures_path %>
