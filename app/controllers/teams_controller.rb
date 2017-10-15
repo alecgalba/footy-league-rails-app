@@ -41,7 +41,7 @@ class TeamsController < ApplicationController
   # PATCH/PUT /teams/1.json
   def update
     respond_to do |format|
-      if @team.update(team_params)
+      if @team.update(team_params.merge(user_id: current_user.id))
         format.html { redirect_to @team, notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
@@ -69,6 +69,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :mascot, :colors, league_ids:[])
+      params.require(:team).permit(:name, :mascot, :colors, :user_id, league_ids:[])
     end
 end
