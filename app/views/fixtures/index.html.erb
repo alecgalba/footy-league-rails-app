@@ -18,8 +18,8 @@
       <tr>
         <td><%= fixture.team_1 %></td>
         <td><%= fixture.team_2 %></td>
-        <td><%= fixture.date.strftime("%m/%d/%Y") %></td>
-        <td><%= fixture.time.strftime("%l:%M %p") %></td>
+        <td><%= fixture.date %></td>
+        <td><%= fixture.time %></td>
         <td><%= link_to 'Show', fixture %></td>
         <td><%= link_to 'Edit', edit_fixture_path(fixture) %></td>
         <td><%= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
