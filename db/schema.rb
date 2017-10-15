@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015171914) do
+ActiveRecord::Schema.define(version: 20171015220047) do
 
   create_table "fixtures", force: :cascade do |t|
     t.string "team_1"
@@ -33,10 +33,8 @@ ActiveRecord::Schema.define(version: 20171015171914) do
   end
 
   create_table "leagues_teams", id: false, force: :cascade do |t|
-    t.integer "league_id", null: false
-    t.integer "team_id", null: false
-    t.index ["league_id", "team_id"], name: "index_leagues_teams_on_league_id_and_team_id"
-    t.index ["team_id", "league_id"], name: "index_leagues_teams_on_team_id_and_league_id"
+    t.integer "league_id"
+    t.integer "team_id"
   end
 
   create_table "teams", force: :cascade do |t|
