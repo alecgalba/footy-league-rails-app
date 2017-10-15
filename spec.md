@@ -24,7 +24,7 @@ Specs:
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
 - [X] Include form display of validation errors (form URL e.g. /recipes/new)
-  <br>###Erros are displayed above the forms upon being activated
+  <br>###Errors are displayed above the forms upon being activated
 
 Confirm:
 - [ ] The application is pretty DRY
