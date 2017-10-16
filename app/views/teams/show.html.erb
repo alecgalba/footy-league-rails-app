@@ -29,7 +29,7 @@
   <strong>Fixtures:</strong>
   <ul>
     <% @team.fixtures.each do |fixture| %>
-      <li><%= fixture.team_1 %> vs. <%= fixture.team_2 %>, <%= fixture.date %> @ <%= fixture.time %></li>
+      <li> vs. <%= fixture.opponent %>, <%= fixture.date.strftime("%m/%d/%Y") %> @ <%= fixture.time.strftime("%l:%M %p") %></li>
     <% end %>
   </ul>
 </p>
@@ -43,6 +43,7 @@
   </ul>
 </p>
 
+<%= link_to 'New Fixture', new_fixture_path %> |
 <%= link_to 'New Team Player', new_team_player_path(@team) %> |
-<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Edit Team', edit_team_path(@team) %> |
 <%= link_to 'Back to Teams Index', teams_path %>
