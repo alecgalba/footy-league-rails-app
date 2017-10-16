@@ -4,7 +4,10 @@ class FixturesController < ApplicationController
   # GET /fixtures
   # GET /fixtures.json
   def index
-    @fixtures = Fixture.all
+    @fixtures = Fixture.where(nil)
+    filtering_params(params).each do |key, value|
+      @fixtures = @fixtures.public_send(key, value) if value.present?
+    end
   end
 
   # GET /fixtures/1
@@ -70,5 +73,9 @@ class FixturesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def fixture_params
       params.require(:fixture).permit(:team_1, :team_2, :date, :time, team_id:[], league_id:[])
+    end
+
+    def filtering_params(params)
+      params.slice(:time, :date)
     end
 end
