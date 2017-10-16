@@ -1,8 +1,7 @@
 class CreateFixtures < ActiveRecord::Migration[5.1]
   def change
     create_table :fixtures do |t|
-      t.string :team_1
-      t.string :team_2
+      t.string :opponent
       t.date :date
       t.time :time
       t.belongs_to :team, index: true, foreign_key: true
