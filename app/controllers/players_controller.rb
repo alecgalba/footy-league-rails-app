@@ -86,7 +86,7 @@ class PlayersController < ApplicationController
     @player.destroy
 
     respond_to do |format|
-      format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
+      format.html { redirect_to(team_players_path) }
       format.xml { head :ok }
       # format.json { head :no_content }
     end
