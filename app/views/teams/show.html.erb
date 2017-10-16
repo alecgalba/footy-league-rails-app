@@ -24,6 +24,16 @@
   </ul>
 </p>
 
+
+<p>
+  <strong>Fixtures:</strong>
+  <ul>
+    <% @team.fixtures.each do |fixture| %>
+      <li><%= fixture.team_1 %> vs. <%= fixture.team_2 %>, <%= fixture.date %> @ <%= fixture.time %></li>
+    <% end %>
+  </ul>
+</p>
+
 <p>
   <strong>In League(s):</strong>
   <ul>
