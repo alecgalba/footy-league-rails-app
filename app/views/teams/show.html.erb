@@ -16,6 +16,15 @@
 </p>
 
 <p>
+  <strong>Player List:</strong>
+  <ul>
+    <% @team.players.each do |player| %>
+      <li>Name: <%= player.name %> || Age: <%= player.age %> || Position: <%= player.position %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
   <strong>In League(s):</strong>
   <ul>
     <% @team.leagues.each do |league| %>
@@ -24,5 +33,6 @@
   </ul>
 </p>
 
+<%= link_to 'New Team Player', new_team_player_path(@team) %> |
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back to Teams Index', teams_path %>
