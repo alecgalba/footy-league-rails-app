@@ -13,8 +13,7 @@
 ActiveRecord::Schema.define(version: 20171016141409) do
 
   create_table "fixtures", force: :cascade do |t|
-    t.string "team_1"
-    t.string "team_2"
+    t.string "opponent"
     t.date "date"
     t.time "time"
     t.integer "team_id"
