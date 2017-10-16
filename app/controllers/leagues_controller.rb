@@ -10,6 +10,7 @@ class LeaguesController < ApplicationController
   # GET /leagues/1
   # GET /leagues/1.json
   def show
+    @league = League.find(params[:id])
   end
 
   # GET /leagues/new
@@ -69,6 +70,6 @@ class LeaguesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def league_params
-      params.require(:league).permit(:name, :description, team_ids:[])
+      params.require(:league).permit(:name, :description, team_ids:[], fixture_ids: [])
     end
 end
