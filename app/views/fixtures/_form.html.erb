@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :team_1, "Home Team" %>
+    <%= form.label :team_id, "Home Team" %>
     <%= form.collection_select :team_1, Team.all, :name, :name %>
   </div>
 
@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :league_id, "League" %>
-    <%= form.collection_select :league_ids, League.all, :name, :name %>
+    <%= form.collection_select :league_id, League.all, :id, :name %>
   </div>
 
   <div class="actions">
