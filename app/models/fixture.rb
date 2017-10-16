@@ -7,11 +7,6 @@ class Fixture < ApplicationRecord
   validates :date, presence: true
   validates :time, presence: true
 
-  def self.team_id=(team_id)
-    @team_id = team_1.id
-  end
-
-  def self.league_id=(league_id)
-    @league_id = league_id
-  end
+  scope :time, -> (time) { where time: time }
+  scope :date, -> (date) { where date: date }
 end
