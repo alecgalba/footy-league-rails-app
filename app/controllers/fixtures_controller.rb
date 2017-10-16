@@ -28,6 +28,7 @@ class FixturesController < ApplicationController
   # POST /fixtures.json
   def create
     @fixture = Fixture.new(fixture_params)
+    # raise params.inspect
 
     respond_to do |format|
       if @fixture.save
@@ -72,7 +73,7 @@ class FixturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fixture_params
-      params.require(:fixture).permit(:team_1, :team_2, :date, :time, :team_id, :league_id)
+      params.require(:fixture).permit(:opponent, :date, :time, :team_id, :league_id)
     end
 
     def filtering_params(params)
