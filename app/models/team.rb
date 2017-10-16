@@ -4,6 +4,7 @@ class Team < ApplicationRecord
   has_many :fixtures
   # has_many :leagues, through: :fixtures
   accepts_nested_attributes_for :fixtures
+  has_many :players
 
   validates :name, presence: true
   validates :mascot, presence: true
