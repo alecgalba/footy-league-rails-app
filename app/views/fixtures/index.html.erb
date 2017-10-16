@@ -16,8 +16,8 @@
   <tbody>
     <% @fixtures.each do |fixture| %>
       <tr>
-        <td><%= fixture.team_1 %></td>
-        <td><%= fixture.team_2 %></td>
+        <td><%= fixture.team_id %></td>
+        <td><%= fixture.opponent %></td>
         <td><%= fixture.date.strftime("%m/%d/%Y") %></td>
         <td><%= fixture.time.strftime("%l:%M %p") %></td>
         <td><%= link_to 'Show', fixture %></td>
