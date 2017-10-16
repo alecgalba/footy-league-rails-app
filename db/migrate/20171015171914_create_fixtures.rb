@@ -5,8 +5,8 @@ class CreateFixtures < ActiveRecord::Migration[5.1]
       t.string :team_2
       t.date :date
       t.time :time
-      t.belongs_to :team
-      t.belongs_to :league
+      t.belongs_to :team, index: true, foreign_key: true
+      t.belongs_to :league, index: true, foreign_key: true
       t.timestamps null: false
     end
   end
