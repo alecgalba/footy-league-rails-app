@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :team_id, "Home Team" %>
-    <%= form.collection_select :team_1, Team.all, :name, :name %>
+    <%= form.collection_select :team_id, Team.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :team_2, "Away Team" %>
-    <%= form.collection_select :team_2, Team.all, :name, :name %>
+    <%= form.label :opponent, "Away Team" %>
+    <%= form.collection_select :opponent, Team.all, :name, :name %>
   </div>
 
   <div class="field">
