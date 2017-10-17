@@ -43,7 +43,9 @@
   </ul>
 </p>
 
-<%= link_to 'New Fixture', new_fixture_path %> |
-<%= link_to 'New Team Player', new_team_player_path(@team) %> |
-<%= link_to 'Edit Team', edit_team_path(@team) %> |
+<% if @team.user_id == current_user.id %>
+  <%= link_to 'New Fixture', new_fixture_path %> |
+  <%= link_to 'New Team Player', new_team_player_path(@team) %> |
+  <%= link_to 'Edit Team', edit_team_path(@team) %> |
+<% end %>
 <%= link_to 'Back to Teams Index', teams_path %>
