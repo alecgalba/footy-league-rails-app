@@ -6,7 +6,15 @@ class Fixture < ApplicationRecord
   validates :date, presence: true
   validates :time, presence: true
 
-  scope :time, -> (time) { where time: time }
-  scope :date, -> (date) { where date: date }
+  def self.old_games
+    where("date <?", Time.zone.today)
+  end
+
+  def self.upcoming_matches
+    where("date >?", Time.zone.today)
+  end
+
+  # scope :time, -> (time) { where time: time }
+  # scope :date, -> (date) { where date: date }
 
 end
