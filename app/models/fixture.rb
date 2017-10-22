@@ -14,7 +14,4 @@ class Fixture < ApplicationRecord
     where("date >?", Time.zone.today)
   end
 
-  # scope :time, -> (time) { where time: time }
-  # scope :date, -> (date) { where date: date }
-
 end

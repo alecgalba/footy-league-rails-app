@@ -4,14 +4,8 @@ class FixturesController < ApplicationController
   # GET /fixtures
   # GET /fixtures.json
   def index
-    # @fixtures = Fixture.where(nil)
-    # filtering_params(params).each do |key, value|
-    #   @fixtures = @fixtures.public_send(key, value) if value.present?
-    # end
-    # provide a list of authors to the view for the filter control
     @fixtures = Fixture.all
 
-    # filter the @posts list based on user input
     if !params[:date].blank?
       if params[:date] == "Upcoming Matches"
         @fixtures = Fixture.upcoming_matches
@@ -19,7 +13,6 @@ class FixturesController < ApplicationController
         @fixtures = Fixture.old_games
       end
     else
-      # if no filters are applied, show all posts
       @fixtures = Fixture.all
     end
   end
