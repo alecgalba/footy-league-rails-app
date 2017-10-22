@@ -29,5 +29,11 @@
 </table>
 
 <br>
+<div>
+  <%= form_tag("/fixtures", method: "get") do %>
+    <%= select_tag "date", options_for_select(["Upcoming Matches", "Old Games"]), include_blank: true %>
+    <%= submit_tag "Filter Fixtures" %>
+  <% end %>
+</div>
 
 <%= link_to 'New Fixture', new_fixture_path %>
