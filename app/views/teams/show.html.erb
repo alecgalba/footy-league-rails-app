@@ -29,7 +29,7 @@
   <strong>Fixtures:</strong>
   <ul>
     <% @team.fixtures.each do |fixture| %>
-      <li> vs. <%= fixture.opponent %>, <%= fixture.date.strftime("%m/%d/%Y") %> @ <%= fixture.time.strftime("%l:%M %p") %></li>
+      <li> vs. <%= fixture.opponent %>, <%= fixture_date fixture %> @ <%= fixture_time fixture %></li>
     <% end %>
   </ul>
 </p>

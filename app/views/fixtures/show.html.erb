@@ -14,12 +14,12 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @fixture.date.strftime("%m/%d/%Y") %>
+  <%= fixture_date @fixture %>
 </p>
 
 <p>
   <strong>Kick Off Time:</strong>
-  <%= @fixture.time.strftime("%l:%M %p") %>
+  <%= fixture_time @fixture %>
 </p>
 
 <%= link_to 'Edit', edit_fixture_path(@fixture) %> |
