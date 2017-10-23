@@ -9,10 +9,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
       <%= link_to("Sign Out", destroy_user_session_path, :method => "delete") %>
-        <%= link_to 'Team Index', teams_path %>
-        <%= link_to 'League Index', leagues_path %>
-        <%= link_to 'Fixtures Index', fixtures_path %>
+      <%= link_to 'Team Index', teams_path %>
+      <%= link_to 'League Index', leagues_path %>
+      <%= link_to 'Fixtures Index', fixtures_path %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
