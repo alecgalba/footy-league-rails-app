@@ -43,6 +43,13 @@
   </ul>
 </p>
 
+<p>
+  <strong>Sponsored By:</strong>
+    <%= @team.sponsors.each do |sponsor| %>
+      <%= sponsor_name sponsor %>
+    <% end %>
+</p>
+
 <% if @team.user_id == current_user.id %>
   <%= link_to 'New Fixture', new_fixture_path %> |
   <%= link_to 'New Team Player', new_team_player_path(@team) %> |

@@ -15,6 +15,7 @@ class TeamsController < ApplicationController
   # GET /teams/new
   def new
     @team = Team.new
+    @sponsors = @team.sponsors.build
   end
 
   # GET /teams/1/edit
@@ -69,6 +70,6 @@ class TeamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def team_params
-      params.require(:team).permit(:name, :mascot, :colors, :user_id, league_ids:[])
+      params.require(:team).permit(:name, :mascot, :colors, :user_id, league_ids:[], sponsors_attributes: [:name])
     end
 end

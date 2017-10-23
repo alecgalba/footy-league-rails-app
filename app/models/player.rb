@@ -7,4 +7,5 @@ class Player < ApplicationRecord
 
   scope :age, -> (age) { where age: age }
   scope :position, -> (position) { where position: position }
+
 end

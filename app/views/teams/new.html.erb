@@ -2,4 +2,11 @@
 
 <%= render 'form', team: @team %>
 
+<!-- Add A Sponsor:
+<%= fields_for :sponsors, @team.sponsors.build do |i| %>
+  <%= i.label :name %>
+  <%= i.text_field :name %>
+
+<% end %> -->
+
 <%= link_to 'Back to Teams Index', teams_path %>

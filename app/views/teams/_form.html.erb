@@ -37,6 +37,13 @@
   </div>
 
   <div class="actions">
+    <%= form.fields_for :sponsors do |i| %>
+      <%= i.label :name, "Sponsor Name" %>
+      <%= i.text_field :name %>
+    <% end %>
+  </div>
+
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
