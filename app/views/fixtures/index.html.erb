@@ -22,7 +22,7 @@
         <td><%= fixture.time.strftime("%l:%M %p") %></td>
         <td><%= link_to 'Show', fixture %></td>
         <td><%= link_to 'Edit', edit_fixture_path(fixture) %></td>
-        <td><%= link_to 'Destroy', fixture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', fixture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
