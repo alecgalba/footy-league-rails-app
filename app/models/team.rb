@@ -9,4 +9,5 @@ class Team < ApplicationRecord
   validates :mascot, presence: true
   validates :colors, presence: true
 
+
 end
