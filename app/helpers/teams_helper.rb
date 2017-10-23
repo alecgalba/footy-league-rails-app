@@ -1,6 +1,6 @@
 module TeamsHelper
 
   def sponsor_name(sponsor)
-    sponsor.name.remove!("[#")
+    sponsor.name
   end
 end
