@@ -1,29 +1,21 @@
 class LeaguesController < ApplicationController
   before_action :set_league, only: [:show, :edit, :update, :destroy]
 
-  # GET /leagues
-  # GET /leagues.json
   def index
     @leagues = League.all
   end
 
-  # GET /leagues/1
-  # GET /leagues/1.json
   def show
     @league = League.find(params[:id])
   end
 
-  # GET /leagues/new
   def new
     @league = League.new
   end
 
-  # GET /leagues/1/edit
   def edit
   end
 
-  # POST /leagues
-  # POST /leagues.json
   def create
     @league = League.new(league_params)
 
@@ -38,8 +30,6 @@ class LeaguesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /leagues/1
-  # PATCH/PUT /leagues/1.json
   def update
     respond_to do |format|
       if @league.update(league_params)
@@ -52,8 +42,6 @@ class LeaguesController < ApplicationController
     end
   end
 
-  # DELETE /leagues/1
-  # DELETE /leagues/1.json
   def destroy
     @league.destroy
     respond_to do |format|
@@ -63,12 +51,10 @@ class LeaguesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_league
       @league = League.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def league_params
       params.require(:league).permit(:name, :description, team_ids:[])
     end

@@ -1,8 +1,6 @@
 class FixturesController < ApplicationController
   before_action :set_fixture, only: [:show, :edit, :update, :destroy]
 
-  # GET /fixtures
-  # GET /fixtures.json
   def index
     @fixtures = Fixture.all
 
@@ -17,25 +15,18 @@ class FixturesController < ApplicationController
     end
   end
 
-  # GET /fixtures/1
-  # GET /fixtures/1.json
   def show
   end
 
-  # GET /fixtures/new
   def new
     @fixture = Fixture.new
   end
 
-  # GET /fixtures/1/edit
   def edit
   end
 
-  # POST /fixtures
-  # POST /fixtures.json
   def create
     @fixture = Fixture.new(fixture_params)
-    # raise params.inspect
 
     respond_to do |format|
       if @fixture.save
@@ -48,8 +39,6 @@ class FixturesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fixtures/1
-  # PATCH/PUT /fixtures/1.json
   def update
     respond_to do |format|
       if @fixture.update(fixture_params)
@@ -62,8 +51,6 @@ class FixturesController < ApplicationController
     end
   end
 
-  # DELETE /fixtures/1
-  # DELETE /fixtures/1.json
   def destroy
     @fixture.destroy
     respond_to do |format|
@@ -73,17 +60,12 @@ class FixturesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_fixture
       @fixture = Fixture.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def fixture_params
       params.require(:fixture).permit(:opponent, :date, :time, :team_id, :league_id)
     end
 
-    # def filtering_params(params)
-    #   params.slice(:time, :date)
-    # end
 end
