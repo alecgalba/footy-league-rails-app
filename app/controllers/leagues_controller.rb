@@ -2,7 +2,7 @@ class LeaguesController < ApplicationController
   before_action :set_league, only: [:show, :edit, :update, :destroy]
 
   def index
-    @leagues = League.all
+    @leagues = League.order(created_at: :asc).page(params[:page])
   end
 
   def show
