@@ -16,7 +16,8 @@ class PlayersController < ApplicationController
     @player = team.players.find(params[:id])
 
     respond_to do |format|
-      format.html
+      format.html { render :show }
+      format.json { render json: @player }
       format.xml { render :xml => @players }
     end
   end
