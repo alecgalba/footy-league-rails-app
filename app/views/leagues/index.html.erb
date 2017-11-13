@@ -16,9 +16,9 @@
   <tbody>
     <% @leagues.each do |league| %>
       <tr>
-        <td><%= league.name %></td>
-        <td><%= league.description %></td>
-        <td><%= link_to 'Show', league %></td>
+        <td><%= link_to league.name, league_path(league) %></td>
+        <td id="league-<%= league.id %>"><%= truncate(league.description) %><button class="js-more" data-id="<%= league.id %>">More Info</button></td>
+        <!-- <td><%= link_to 'Show', league %></td> -->
         <td><%= link_to 'Edit', edit_league_path(league) %></td>
         <td><%= link_to 'Delete', league, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -29,3 +29,15 @@
 <br>
 
 <%= link_to 'New League', new_league_path %>
+
+<script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".js-more").on("click", function() {
+    var id = $(this).data("id");
+    $.get("/leagues/" + id + ".json", function(league) {
+      var descriptionText = "<p>" + league["description"] + "</p>"
+      $("#league-" + id).html(descriptionText);
+    });
+  });
+});
+</script>
