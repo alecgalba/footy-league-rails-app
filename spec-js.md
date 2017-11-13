@@ -3,9 +3,11 @@
 Specs:
 - [x] Use jQuery for implementing new requirements
 - [ ] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
-- [ ] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
+- [X] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
+  <br>###Users click the more info button which uses jquery and AJAX to render the info to the divs without a page refresh
 - [ ] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
-- [ ] Use your Rails API and a form to create a resource and render the response without a page refresh.
+- [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
+  <br>###Users can add teams to which render to the page without a refresh
 - [ ] Translate JSON responses into js model objects.
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
 
