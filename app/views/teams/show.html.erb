@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="teamName">
   <strong>Name:</strong>
   <%= @team.name %>
 </p>
 
-<p>
+<p class="teamMascot">
   <strong>Mascot:</strong>
   <%= @team.mascot %>
 </p>
 
-<p>
+<p class="teamColors">
   <strong>Colors:</strong>
   <%= @team.colors %>
 </p>
 
-<p>
+<p class="teamPlayers">
   <strong>Player List:</strong>
   <ul>
     <% @team.players.each do |player| %>
@@ -25,7 +25,7 @@
 </p>
 
 
-<p>
+<p class="teamFixtures">
   <strong>Fixtures:</strong>
   <ul>
     <% @team.fixtures.each do |fixture| %>
@@ -34,7 +34,7 @@
   </ul>
 </p>
 
-<p>
+<p class="teamLeagues">
   <strong>In League(s):</strong>
   <ul>
     <% @team.leagues.each do |league| %>
@@ -43,7 +43,7 @@
   </ul>
 </p>
 
-<p>
+<p class="teamSponsor">
   <strong>Sponsored By:</strong>
     <%= @team.sponsors.each do |sponsor| %>
       <%= sponsor.name %>
