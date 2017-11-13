@@ -5,6 +5,11 @@ class LeaguesController < ApplicationController
     @leagues = League.order(created_at: :asc).page(params[:page])
   end
 
+  def description
+    league = League.find(params[:id])
+    render plain: league.description
+  end
+
   def show
     @league = League.find(params[:id])
   end
