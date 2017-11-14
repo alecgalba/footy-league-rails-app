@@ -4,6 +4,6 @@ class League < ApplicationRecord
   has_and_belongs_to_many :teams
 
   validates :name, presence: true
-  validates :description, presence: true, length: {maximum: 100}
+  validates :description, presence: true, length: {maximum: 500}
 
 end
