@@ -2,7 +2,8 @@
 
 Specs:
 - [x] Use jQuery for implementing new requirements
-- [ ] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
+- [X] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
+  <br>###Users click the next fixture button which uses jquery and AJAX to render the info to the divs without a page refresh
 - [X] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
   <br>###Users click the more info button which uses jquery and AJAX to render the info to the divs without a page refresh
 - [ ] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
