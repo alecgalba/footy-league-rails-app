@@ -1,26 +1,81 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
+
+<a href="#" class="js-next" data-id="<%=@fixture.id%>">Next Fixture</a>
 
 <h1>Selected Fixture</h1>
 
-<p>
+<p class="fixtureTeamId">
   <strong>Home Team:</strong>
   <%= @fixture.team_id %>
 </p>
 
-<p>
+<p class="fixtureAwayTeam">
   <strong>Away Team:</strong>
   <%= @fixture.opponent %>
 </p>
 
-<p>
+<p class="fixtureDate">
   <strong>Date:</strong>
   <%= fixture_date @fixture %>
 </p>
 
-<p>
+<p class="fixtureTime">
   <strong>Kick Off Time:</strong>
   <%= fixture_time @fixture %>
 </p>
 
 <%= link_to 'Edit', edit_fixture_path(@fixture) %> |
 <%= link_to 'Back To Fixture Index', fixtures_path %>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function() {
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/fixtures/" + nextId + ".json", function(data) {
+      var fixture = data;
+      $(".fixtureHomeTeam").text(fixture["team_id"]);
+      $(".fixtureAwayTeam").text(fixture["opponent"]);
+      $(".fixtureDate").text(fixture["date"]);
+      $(".fixtureTime").text(fixture["time"]);
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", fixture["id"]);
+    });
+  });
+});
+</script> -->
+<h1>Selected Fixture</h1><br>
+<a href="#" class="js-next" data-id="<%= @fixture.id %>">Next Fixture</a><br>
+<br><strong>Home Team ID: </strong>
+<p class="fixtureTeamId">
+  <%= @fixture.team_id %>
+</p>
+<strong>Away Team: </strong>
+<p class="fixtureOpponent">
+  <%= @fixture.opponent %>
+</p>
+<strong>Fixture Date: </strong>
+<p class="fixtureDate">
+  <%= fixture_date @fixture %>
+</p>
+<strong>Fixture Time: </strong>
+<p class="fixtureTime">
+  <%= fixture_time @fixture %>
+</p>
+
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  $(".js-next").on("click", function(event) {
+    event.preventDefault()
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/fixtures/" + nextId + ".json", function(data) {
+      var fixture = data;
+      $(".fixtureTeamId").text(fixture["team_id"]);
+      $(".fixtureOpponent").text(fixture["opponent"]);
+      $(".fixtureDate").text(fixture["date"]); // Not sure why the date and time are not formatting properly upon clicking next
+      $(".fixtureTime").text(fixture["time"]); // Not sure why the date and time are not formatting properly upon clicking next
+      // re-set the id to current on the link
+      $(".js-next").attr("data-id", fixture["id"]);
+    });
+  });
+});
+</script>
