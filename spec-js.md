@@ -6,7 +6,8 @@ Specs:
   <br>###Users click the next fixture button which uses jquery and AJAX to render the info to the divs without a page refresh
 - [X] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
   <br>###Users click the more info button which uses jquery and AJAX to render the info to the divs without a page refresh
-- [ ] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
+- [X] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
+  <br>###Teams have many fixtures in the AMS serializer
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
   <br>###Users can add teams to which render to the page without a refresh
 - [ ] Translate JSON responses into js model objects.
