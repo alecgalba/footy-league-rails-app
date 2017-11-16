@@ -9,7 +9,7 @@ class LeagueSerializer < ActiveModel::Serializer
         id: comment.id,
         user: {
           id: comment.user_id,
-          name: User.find(comment.user_id).email
+          email: User.find(comment.user_id).email
         },
         content: comment.content
       }
