@@ -12,6 +12,13 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+    if current_user
+      @comment = current_user.comments.build(league: @league)
+    end
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @league }
+    end
   end
 
   def new
