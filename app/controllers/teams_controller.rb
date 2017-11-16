@@ -23,15 +23,6 @@ class TeamsController < ApplicationController
   def create
     @team = Team.create(team_params.merge(user_id: current_user.id))
     render json: @team, status: 201
-    # respond_to do |format|
-    #   if @team.save
-    #     format.html { redirect_to @team, notice: 'Team was successfully created.' }
-    #     format.json { render @team, status: 201, location: @team }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @team.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def update
