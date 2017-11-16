@@ -30,3 +30,21 @@
 
 <%= link_to 'Edit', edit_league_path(@league) %> |
 <%= link_to 'Back to League Index', leagues_path %>
+
+<% if current_user %>
+ <h4>Add a comment:</h4>
+   <%= form_for @comment, url: league_comments_path(@league, @comment) do |f| %>
+     <p><strong>Content</strong> <%= f.text_area :content, class: 'commentBox form-control' %></p>
+     <button type="submit" class="btn btn-sm btn-primary">Create Comment</button>
+   <% end %><br>
+<% else %>
+ <p>Please log in order to add a comment.</p>
+<% end %>
+<h4>Comments:</h4>
+<div id="submitted-comments">
+ <% @league.comments.each do |comment| %>
+ <div id="comment-<%= comment.id %>">
+   <strong class="commentUserName"><%= comment.user.email %></strong> says: <span class="commentContent"><%= comment.content %></span>
+ </div>
+ <% end %>
+</div>
