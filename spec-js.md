@@ -10,7 +10,7 @@ Specs:
   <br>###Teams have many fixtures in the AMS serializer
   <br>###Users have many comments in the AMS serializer
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
-  <br>###Users can add teams to which render to the page without a refresh
+  <br>###Users can add comments which render to the page without a refresh
 - [X] Translate JSON responses into js model objects.
   <br>###When users submit a comment, the comment is turned into a JS object and appended to the DOM
 - [X] At least one of the js model objects must have at least one method added by your code to the prototype.
