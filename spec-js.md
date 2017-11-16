@@ -8,10 +8,13 @@ Specs:
   <br>###Users click the more info button which uses jquery and AJAX to render the info to the divs without a page refresh
 - [X] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
   <br>###Teams have many fixtures in the AMS serializer
+  <br>###Users have many comments in the AMS serializer
 - [X] Use your Rails API and a form to create a resource and render the response without a page refresh.
   <br>###Users can add teams to which render to the page without a refresh
-- [ ] Translate JSON responses into js model objects.
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
+- [X] Translate JSON responses into js model objects.
+  <br>###When users submit a comment, the comment is turned into a JS object and appended to the DOM
+- [X] At least one of the js model objects must have at least one method added by your code to the prototype.
+  <br>###Comment objects have a renderDisplay() method which helps with formatting the rendered comment
 
 Confirm
 - [ ] You have a large number of small Git commits
