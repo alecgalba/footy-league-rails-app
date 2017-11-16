@@ -31,7 +31,7 @@ Comment.prototype.renderDisplay = function() {
 }
 
 $(function() {
-  $("form#new_comment").on("submit", function(event) {
+  $("form#new_comment").on("submit-comment", function(event) {
     event.preventDefault();
     var $form = $(this);
     var action = $form.attr("action");
