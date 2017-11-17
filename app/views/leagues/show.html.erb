@@ -42,9 +42,5 @@
 <% end %>
 <h4>Comments:</h4>
 <div id="submitted-comments">
- <% @league.comments.each do |comment| %>
- <div id="comment-<%= comment.id %>">
-   <strong class="commentUserName"><%= comment.user.email %></strong> says: <span class="commentContent"><%= comment.content %></span>
- </div>
- <% end %>
+
 </div>
