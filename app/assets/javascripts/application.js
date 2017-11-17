@@ -23,7 +23,7 @@ $(function() {
     this.user = data.user;
   }
 
-  Comment.prototype.renderDisplay = function() {
+  Comment.prototype.formatComment = function() {
     var html = "" ;
     html += "<div id=\'comment-\' + comment.id + '\'>" +  "<strong>" + this.user.email + "</strong>" + " says: " + this.content + "</div>";
     $("#submitted-comments").append(html);
@@ -45,7 +45,7 @@ $(function() {
       .success(function(json) {
         $(".commentBox").val("");
         var comment = new Comment(json);
-        comment.renderDisplay();
+        comment.formatComment();
 
       })
     })
