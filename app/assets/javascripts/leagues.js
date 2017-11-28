@@ -4,7 +4,7 @@ $(function(){
     //You just clicked on the Load Comments link
     //We'd love to use the HREF attribute of that link as the URL for the request
 
-    //Fire some AJAX
+    //Fire some AJAX with low-level API
     // $.ajax({
     //   method: "GET",
     //   url: this.href
