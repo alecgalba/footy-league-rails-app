@@ -1,5 +1,5 @@
 class CommentSerializer < ActiveModel::Serializer
   attributes :id, :content
-  has_one :user
-  has_one :league
+  belongs_to :user
+  belongs_to :league
 end

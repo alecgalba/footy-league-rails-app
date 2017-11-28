@@ -40,7 +40,9 @@
 <% else %>
  <p>Please log in order to add a comment.</p>
 <% end %>
-<h4>Comments:</h4>
-<div id="submitted-comments">
 
+<%= link_to "Load Comments", league_comments_path(@league, @comment), :class => "load_comments" %>
+
+
+<div class= "comments" id="submitted-comments">
 </div>

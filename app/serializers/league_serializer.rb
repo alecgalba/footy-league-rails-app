@@ -1,6 +1,7 @@
 class LeagueSerializer < ActiveModel::Serializer
   attributes :id, :name, :description
   has_one :user
+  has_many :comments
 
 
   def comment_list

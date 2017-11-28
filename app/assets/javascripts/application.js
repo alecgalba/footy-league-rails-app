@@ -34,7 +34,6 @@ $(function() {
       event.preventDefault();
       var $form = $(this);
       var action = $form.attr("action");
-      // in order to process the comment(form data), its need to be converted from an object to a string.
       var params = $form.serialize();
       $.ajax({
         url: action,
@@ -46,7 +45,6 @@ $(function() {
         $(".commentBox").val("");
         var comment = new Comment(json);
         comment.formatComment();
-
       })
     })
   })
