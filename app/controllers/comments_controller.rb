@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 
   def index
     @comments = @league.comments
-    render 'comments/index', :layout => false, status: 200
+    # render 'comments/index', :layout => false, status: 200
+    render :json => @comments
   end
 
   def create
