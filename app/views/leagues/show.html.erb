@@ -34,7 +34,7 @@
 <% if current_user %>
  <h4>Add a comment:</h4>
    <%= form_for @comment, url: league_comments_path(@league, @comment) do |f| %>
-     <%= f.text_area :content, class: 'commentBox form-control' %><br>
+     <%= f.text_area :content, class: 'commentBox' %><br>
      <button type="submit" class="btn btn-sm btn-primary">Create Comment</button>
    <% end %><br>
 <% else %>
