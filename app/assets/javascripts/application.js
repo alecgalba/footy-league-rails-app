@@ -25,7 +25,7 @@ $(function() {
 
   Comment.prototype.formatComment = function() {
     var html = "" ;
-    html += "<div id=\'comment-\' + comment.id + '\'>" +  "<strong>" + this.user.email + "</strong>" + " says: " + this.content + "</div>";
+    html += "<div id=\'comment-\' + comment.id + '\'>" +  "<strong>You</strong>" + " say: " + this.content + "</div>";
     $("#submitted-comments").append(html);
   }
 
