@@ -76,6 +76,8 @@ $(function () {
       $(".fixtureTime").text(fixture["time"]); // Not sure why the date and time are not formatting properly upon clicking next
       // re-set the id to current on the link
       $(".js-next").attr("data-id", fixture["id"]);
+    }).error(function(brokeNext){
+      alert("No More Fixtures!")
     });
   });
 });
@@ -92,6 +94,8 @@ $(function () {
       $(".fixtureTime").text(fixture["time"]); // Not sure why the date and time are not formatting properly upon clicking next
       // re-set the id to current on the link
       $(".js-last").attr("data-id", fixture["id"]);
+    }).error(function(brokeLast){
+      alert("No Past Fixtures!")
     });
   });
 });
