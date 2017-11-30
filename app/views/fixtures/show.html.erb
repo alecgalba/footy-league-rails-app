@@ -1,48 +1,5 @@
-<!-- <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<a href="#" class="js-next" data-id="<%=@fixture.id%>">Next Fixture</a>
-
-<h1>Selected Fixture</h1>
-
-<p class="fixtureTeamId">
-  <strong>Home Team:</strong>
-  <%= @fixture.team_id %>
-</p>
-
-<p class="fixtureAwayTeam">
-  <strong>Away Team:</strong>
-  <%= @fixture.opponent %>
-</p>
-
-<p class="fixtureDate">
-  <strong>Date:</strong>
-  <%= fixture_date @fixture %>
-</p>
-
-<p class="fixtureTime">
-  <strong>Kick Off Time:</strong>
-  <%= fixture_time @fixture %>
-</p>
-
-<%= link_to 'Edit', edit_fixture_path(@fixture) %> |
-<%= link_to 'Back To Fixture Index', fixtures_path %>
-
-<script type="text/javascript" charset="utf-8">
-$(function () {
-  $(".js-next").on("click", function() {
-    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
-    $.get("/fixtures/" + nextId + ".json", function(data) {
-      var fixture = data;
-      $(".fixtureHomeTeam").text(fixture["team_id"]);
-      $(".fixtureAwayTeam").text(fixture["opponent"]);
-      $(".fixtureDate").text(fixture["date"]);
-      $(".fixtureTime").text(fixture["time"]);
-      // re-set the id to current on the link
-      $(".js-next").attr("data-id", fixture["id"]);
-    });
-  });
-});
-</script> -->
 <h1>Selected Fixture</h1><br>
 <a href="#" class="js-last" data-id="<%= @fixture.id %>">Last Fixture</a> ---
 <a href="#" class="js-next" data-id="<%= @fixture.id %>">Next Fixture</a><br>
