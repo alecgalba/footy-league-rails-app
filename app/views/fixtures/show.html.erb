@@ -44,6 +44,7 @@ $(function () {
 });
 </script> -->
 <h1>Selected Fixture</h1><br>
+<a href="#" class="js-last" data-id="<%= @fixture.id %>">Last Fixture</a> ---
 <a href="#" class="js-next" data-id="<%= @fixture.id %>">Next Fixture</a><br>
 <br><strong>Home Team ID: </strong>
 <p class="fixtureTeamId">
@@ -75,6 +76,22 @@ $(function () {
       $(".fixtureTime").text(fixture["time"]); // Not sure why the date and time are not formatting properly upon clicking next
       // re-set the id to current on the link
       $(".js-next").attr("data-id", fixture["id"]);
+    });
+  });
+});
+
+$(function () {
+  $(".js-last").on("click", function(event) {
+    event.preventDefault()
+    var lastId = parseInt($(".js-last").attr("data-id")) - 1;
+    $.get("/fixtures/" + lastId + ".json", function(data) {
+      var fixture = data;
+      $(".fixtureTeamId").text(fixture["team_id"]);
+      $(".fixtureOpponent").text(fixture["opponent"]);
+      $(".fixtureDate").text(fixture["date"]); // Not sure why the date and time are not formatting properly upon clicking next
+      $(".fixtureTime").text(fixture["time"]); // Not sure why the date and time are not formatting properly upon clicking next
+      // re-set the id to current on the link
+      $(".js-last").attr("data-id", fixture["id"]);
     });
   });
 });
