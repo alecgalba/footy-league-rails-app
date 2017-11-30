@@ -1,5 +1,5 @@
 $(function(){
-  $("a.load_comments").on("click", function(e) {
+  $(document).on("click", "a.load_comments", function(e) {
 
     //You just clicked on the Load Comments link
     //We'd love to use the HREF attribute of that link as the URL for the request

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :leagues do
-    resources :comments
+    resources :comments, only: [:index, :create]
   end
 
   root 'teams#index'
