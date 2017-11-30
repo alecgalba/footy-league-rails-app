@@ -20,7 +20,6 @@ $(function() {
   function Comment(data) {
     this.id = data.id;
     this.content = data.content;
-    this.user = data.user;
   }
 
   Comment.prototype.formatComment = function() {
@@ -45,6 +44,9 @@ $(function() {
         $(".commentBox").val("");
         var comment = new Comment(json);
         comment.formatComment();
+      })
+      .error(function(commentError){
+        alert("Can't Post This Comment!");
       })
     })
   })
